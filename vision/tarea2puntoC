@@ -1,0 +1,19 @@
+from pickletools import anyobject
+import numpy as np
+import cv2
+import math
+import imutils  
+
+img1 = cv2.imread('/Users/Arcano/Desktop/lena.JPG')  # Leemos la imagen
+height, width = img1.shape[:2]  # Obtenemos sus dimensiones height alto width ancho
+x = math.pow(height,2)
+y = math.pow(width,2)
+z = math.sqrt(x+y) # calculamos la diagonal
+z = int(z) # convertimos la diagonal a un entero
+img2 = np.array(z,z,3)
+img2 = imutils.rotate(img1, angle=90) 
+
+cv2.imshow('imagen', img1)
+cv2.imshow('resultado', img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
