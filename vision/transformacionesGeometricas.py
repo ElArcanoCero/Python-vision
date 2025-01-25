@@ -22,7 +22,7 @@ cv2.imshow('Escalado 1', scaling)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# OR
+# O
 
 height, width = img.shape[:2]
 res = cv2.resize(img, (50, 520), interpolation=cv2.INTER_CUBIC)
@@ -69,5 +69,3 @@ dst = cv2.warpAffine(img, afineTrans, (cols, rows))
 plt.subplot(121), plt.imshow(img), plt.title('Input')
 plt.subplot(122), plt.imshow(dst), plt.title('Output')
 plt.show()
-
-# Fuente: Documentacion OpenCV
