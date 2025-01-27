@@ -2,16 +2,16 @@ import numpy as np
 import cv2
 import time
 
-img1 = cv2.imread('C:/Users/Arcano/OneDrive/Escritorio/pyton/visionFinal/logo.png')  # Leemos la imagen
+start_time = time.time() # inicia un contador de tiempo 
+img1 = cv2.imread('direccion de la imagen aqui')  # Leemos la imagen
 height, width = img1.shape[:2]    # Obtenemos sus dimensiones
-print(img1.shape)
+# print(img1.shape) # muestra en consola las dimenciones de la imagen
 img2 = np.zeros((height, width, 3), np.uint8)  # Creamos una imagen nueva
 
 ban1 = 0
 ban2 = 0
 ban3 = 0
 # Imagen ciclica
-start_time = time.time()
 
 # Seccion a color
 for i in range(0, height):
