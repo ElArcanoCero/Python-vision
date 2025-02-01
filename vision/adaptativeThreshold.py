@@ -20,4 +20,3 @@ plt.subplot(gs[1, 1]), plt.imshow(th3, 'gray')  # operador truncado
 plt.title('Imagen umbral3')
 plt.show()  # Se plotean los grafico
 
-# Fuente: Documentacion OpenCV

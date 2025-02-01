@@ -25,7 +25,12 @@ def registro_facial():
     texto = "   Mira la luz arriba"
     usuario_num = str(dato_numero1.get())    
     direc =str('C:/Users/Arcano/Desktop/python/diceno2/'+usuario_num) # direccion de la carpeta donde se almacena cada usuario sengo su documento
-    mkdir(direc)                                  #creamos la carpeta
+    try:
+        mkdir(direc) # revisa que la carpeta no exista
+    except FileExistsError:
+        messagebox.showerror("Error", "La carpeta para este usuario ya existe.")
+        exit()
+                                #creamos la carpeta
     archi1=open(direc+'/datos.txt',"w")           #creamos el archivo txt
     archi1.write(str(dato_nombre1.get())+"\n")    #guardamos el nombre y cambiamos de renglon
     archi1.write(str(dato_apellido1.get())+"\n")  #guardamos apellido
@@ -91,7 +96,7 @@ def registro_facial():
         if num == 30: # envia a al arduino
             #ser.write(num.encode())
             print('d')
-            texto = "  Mira a la izquierda"
+            texto = "  Mira la luz a la izquierda"
             messagebox.showinfo(message="Mira la luz de color verde, a la izquierda\nPresiona espacio o enter para continuar", 
                                 title="advertencia")
             
