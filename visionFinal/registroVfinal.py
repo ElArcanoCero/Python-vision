@@ -5,7 +5,6 @@ from matplotlib import pyplot
 from mtcnn.mtcnn import MTCNN
 import os
 from os import mkdir
-#import serial
 from tkinter import messagebox
 import ctypes
 from tkinter import font, ttk
