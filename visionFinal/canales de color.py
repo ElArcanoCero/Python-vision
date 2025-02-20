@@ -41,19 +41,16 @@ while (True):
     maskd = cv2.add(maska, maskb)
     maske = cv2.add(maskc, mask7)
     maskf = cv2.add(maskd, maske)
-   
     
     maskv = cv2.bitwise_and(cuadro, cuadro, mask=maskf)
     
-    
-    
     cv2.imshow("video HSV 7 colores", maskv)
     cv2.imshow("video HSV", imgh)
-   
+
     if cv2.waitKey(1) & 0xFF == ord('s'):
         break
 
-camara.release()  # Liberamos la cámara 
+camara.release()  # Liberamos la cámara
 cv2.destroyAllWindows() #cerramos todas las ventanas
 
 camara = cv2.VideoCapture(0) # Cargamos el vídeo
@@ -74,8 +71,7 @@ pin2l = np.array([240, 190, 140], np.uint8)
 pur1l = np.array([50, 140, 110],np.uint8)
 pur2l = np.array([160, 155, 130], np.uint8)
 
- 
-while (True):  
+while (True):
     (video, cuadro) = camara.read() #  leemos la camara
     if not video:# Si hemos llegado al final del vídeo salimos
         break
@@ -96,10 +92,7 @@ while (True):
     maske = cv2.add(maskc, mask7)
     maskf = cv2.add(maskd, maske)
     
-    
     maskv = cv2.bitwise_and(cuadro, cuadro, mask=maskf)
-    
-    
     
     cv2.imshow("video LAB 7 colores", maskv)
     cv2.imshow("video LAB ", imgl)
@@ -107,5 +100,5 @@ while (True):
     if cv2.waitKey(1) & 0xFF == ord('s'):
         break
     
-camara.release()  # Liberamos la cámara 
+camara.release()  # Liberamos la cámara
 cv2.destroyAllWindows() #cerramos todas las ventanas
